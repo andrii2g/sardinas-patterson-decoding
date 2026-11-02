@@ -1,0 +1,43 @@
+<svg viewBox="0 0 1160 800" role="img" aria-labelledby="title description" xmlns="http://www.w3.org/2000/svg">
+  <title id="title">Sardinas–Patterson residual trace</title>
+  <desc id="description">Columns show codewords and successive residual sets. Red edges trace an ambiguity to the empty suffix. Numbered operations appear below.</desc>
+  <style>text{font-family:monospace;font-size:14px;fill:#172b4d} .heading{font-size:20px;font-weight:bold}</style>
+  <rect width="100%" height="100%" fill="#f6f8fc" />
+  <text x="30" y="35" class="heading">Sardinas–Patterson: ambiguous</text>
+  <text x="30" y="65">Prefix-free: False; termination: EmptyResidual</text>
+  <text x="30" y="95">Witness: 010 = 0 | 10 = 01 | 0</text>
+  <path d="M 700 185 L 850 185 l -9 -4 m 9 4 l -9 4" stroke="#60758d" fill="none" stroke-width="1" />
+  <text x="712" y="176">4</text>
+  <text x="30" y="609">4. S2:0 — remove-residual 0 → S3:ε</text>
+  <path d="M 700 185 L 850 265 l -9 -4 m 9 4 l -9 4" stroke="#60758d" fill="none" stroke-width="1" />
+  <text x="712" y="192">5</text>
+  <text x="30" y="637">5. S2:0 — remove-residual 01 → S3:1</text>
+  <path d="M 160 265 L 310 185 l -9 -4 m 9 4 l -9 4" stroke="#bd2031" fill="none" stroke-width="3" />
+  <text x="172" y="256">1</text>
+  <text x="30" y="525">1. C:01 — remove-codeword 0 → S1:1</text>
+  <path d="M 430 185 L 580 185 l -9 -4 m 9 4 l -9 4" stroke="#bd2031" fill="none" stroke-width="3" />
+  <text x="442" y="192">2</text>
+  <text x="30" y="553">2. S1:1 — remove-residual 10 → S2:0</text>
+  <path d="M 700 185 L 850 185 l -9 -4 m 9 4 l -9 4" stroke="#bd2031" fill="none" stroke-width="3" />
+  <text x="712" y="208">3</text>
+  <text x="30" y="581">3. S2:0 — remove-codeword 0 → S3:ε</text>
+  <text x="40" y="140" class="heading">Codebook C</text>
+  <rect x="40" y="162" width="120" height="46" rx="9" fill="#e4edff" stroke="#60758d" />
+  <text x="52" y="190">0</text>
+  <rect x="40" y="242" width="120" height="46" rx="9" fill="#e4edff" stroke="#60758d" />
+  <text x="52" y="270">01</text>
+  <rect x="40" y="322" width="120" height="46" rx="9" fill="#e4edff" stroke="#60758d" />
+  <text x="52" y="350">10</text>
+  <text x="310" y="140" class="heading">S1</text>
+  <rect x="310" y="162" width="120" height="46" rx="9" fill="#e4edff" stroke="#60758d" />
+  <text x="322" y="190">1</text>
+  <text x="580" y="140" class="heading">S2</text>
+  <rect x="580" y="162" width="120" height="46" rx="9" fill="#e4edff" stroke="#60758d" />
+  <text x="592" y="190">0</text>
+  <text x="850" y="140" class="heading">S3</text>
+  <rect x="850" y="162" width="120" height="46" rx="9" fill="#ffe0e4" stroke="#60758d" />
+  <text x="862" y="190">ε</text>
+  <rect x="850" y="242" width="120" height="46" rx="9" fill="#e4edff" stroke="#60758d" />
+  <text x="862" y="270">1</text>
+  <text x="30" y="505">Transition operations (red graph edges identify one path to ε)</text>
+</svg>

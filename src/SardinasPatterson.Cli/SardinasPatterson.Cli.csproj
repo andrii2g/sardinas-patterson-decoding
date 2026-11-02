@@ -1,4 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup><OutputType>Exe</OutputType></PropertyGroup>
   <ItemGroup><ProjectReference Include="../SardinasPatterson.Core/SardinasPatterson.Core.csproj" /></ItemGroup>
+  <ItemGroup><ProjectReference Include="../SardinasPatterson.Svg/SardinasPatterson.Svg.csproj" /></ItemGroup>
 </Project>

@@ -1,6 +1,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using SardinasPatterson.Core;
+using SardinasPatterson.Svg;
 
 var jsonOptions = new JsonSerializerOptions
 {
@@ -11,11 +12,12 @@ try
 {
     if (args.Length == 0 || args.Contains("--help"))
     {
-        Console.WriteLine("Usage: spd analyze <words...> | --input <file> [--format text|json]\nWitness limits: --max-bits 64 --max-nodes 100000 --max-entries 50000");
+        Console.WriteLine("Usage: spd analyze <words...> | --input <file> [--format text|json] [--svg <file>]\nWitness limits: --max-bits 64 --max-nodes 100000 --max-entries 50000");
         return 0;
     }
     var words = new List<string>();
     string? input = null;
+    string? svg = null;
     var format = "text";
     var maxBits = 64;
     var maxNodes = 100_000;
@@ -26,6 +28,7 @@ try
         switch (args[i])
         {
             case "--input": input = Value(ref i); break;
+            case "--svg": svg = Value(ref i); break;
             case "--format": format = Value(ref i); break;
             case "--max-bits": maxBits = Positive(Value(ref i)); break;
             case "--max-nodes": maxNodes = Positive(Value(ref i)); break;
@@ -48,6 +51,7 @@ try
     var result = SardinasPattersonAnalyzer.Analyze(codebook);
     var witness = result.IsUniquelyDecodable ? WitnessSearcher.NotApplicable()
         : WitnessSearcher.Search(codebook, new(maxBits, maxNodes, maxEntries));
+    if (svg is not null) File.WriteAllText(svg, SvgReport.Render(new(result, witness)));
     if (format == "json") Console.WriteLine(JsonSerializer.Serialize(new AnalysisReport(result, witness), jsonOptions));
     else
     {

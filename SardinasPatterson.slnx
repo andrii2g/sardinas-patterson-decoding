@@ -2,6 +2,7 @@
   <Folder Name="/src/">
     <Project Path="src/SardinasPatterson.Cli/SardinasPatterson.Cli.csproj" />
     <Project Path="src/SardinasPatterson.Core/SardinasPatterson.Core.csproj" />
+    <Project Path="src/SardinasPatterson.Svg/SardinasPatterson.Svg.csproj" />
   </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/SardinasPatterson.Tests/SardinasPatterson.Tests.csproj" />

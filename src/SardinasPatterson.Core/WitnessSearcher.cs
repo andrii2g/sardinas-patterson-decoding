@@ -6,7 +6,10 @@ public enum WitnessStatus { Found, LimitReached, NotApplicable }
 public sealed record WitnessOptions(int MaxBits = 64, int MaxNodes = 100_000, int MaxEntries = 50_000);
 public sealed record WitnessResult(WitnessStatus Status, string? Bits,
     IReadOnlyList<string>? FirstDecoding, IReadOnlyList<string>? SecondDecoding,
-    long ExpandedNodes, int RetainedEntries, double ElapsedMilliseconds, string? Limit);
+    long ExpandedNodes, int RetainedEntries, double ElapsedMilliseconds, string? Limit)
+{
+    public int? BitLength => Bits?.Length;
+}
 public sealed record AnalysisReport(AnalysisResult Analysis, WitnessResult Witness);
 
 public static class WitnessSearcher
